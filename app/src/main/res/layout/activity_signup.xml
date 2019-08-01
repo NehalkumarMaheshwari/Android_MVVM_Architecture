@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="viewmodel"
+                type="com.v4u.mvvm.signup.viewmodel.SignUpViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline9"
+            app:layout_constraintGuide_begin="16dp"
+            android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline10"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline11"
+            app:layout_constraintGuide_begin="20dp"
+            android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline12"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="20dp"/>
+
+    <TextView
+            android:text="@string/sign_up"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@+id/guideline11"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="34sp"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:hint="First Name"
+            android:ems="10"
+            android:maxLength="15"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:text="@={viewmodel.firstName}"
+            android:id="@+id/edtFirstName"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:padding="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:hint="Last Name"
+            android:ems="10"
+            android:text="@={viewmodel.lastName}"
+            android:maxLength="15"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:id="@+id/edtLastName"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintTop_toBottomOf="@+id/edtFirstName"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:padding="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:text="@={viewmodel.emailId}"
+            android:hint="Email Address"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:id="@+id/editEmail"
+            app:layout_constraintTop_toBottomOf="@+id/edtLastName"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            android:layout_marginStart="8dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:inputType="phone"
+            android:ems="10"
+            android:text="@={viewmodel.mobile}"
+            android:hint="Mobile Number"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:id="@+id/editMobile"
+            app:layout_constraintTop_toBottomOf="@+id/editEmail"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            android:layout_marginStart="8dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:hint="Password"
+            android:text="@={viewmodel.password}"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:id="@+id/editPassword"
+            app:layout_constraintTop_toBottomOf="@+id/editMobile"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            android:layout_marginStart="8dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:text="@={viewmodel.retypePassword}"
+            android:hint="Retype Password"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:id="@+id/editRetryPassword"
+            app:layout_constraintTop_toBottomOf="@+id/editPassword"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            android:layout_marginStart="8dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:text="@string/sign_up"
+            android:layout_width="0dp"
+            style="@style/Widget.MaterialComponents.Button"
+            android:textColor="@android:color/white"
+            android:layout_height="50dp"
+            android:id="@+id/btnSignup"
+            android:onClick="@{()->viewmodel.signUpClick()}"
+            app:layout_constraintTop_toBottomOf="@+id/editRetryPassword"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            android:layout_marginStart="8dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="0dp"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_height="50dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:fontFamily="serif"
+            android:onClick="@{()->viewmodel.loginClick()}"
+            android:text="@string/sign_in"
+            android:textColor="#FFFFFF"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignup"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            android:layout_marginStart="8dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"/>
+
+    <RelativeLayout
+            android:id="@+id/rlt_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/textView"
+            android:background="@android:color/transparent"
+            android:clickable="@{viewmodel.isOutsideClickable}"
+            android:visibility="@{viewmodel.isProgressVisible}">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/progressbar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible"/>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
